@@ -3,8 +3,10 @@ language: python
 python:
   - "3.7"
 
-env:
+virtualenv:
+  system_site_packages: true
 
+env:
   - TOXENV=django111_py37
   - TOXENV=django22_py37
 
@@ -12,5 +14,6 @@ env:
 
 install:
   - pip install tox
+  - sudo apt install python-gdal
 
 script: tox
