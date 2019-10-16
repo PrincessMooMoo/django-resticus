@@ -9,9 +9,18 @@ env:
 
   - TOXENV=coverage
 
+addons:
+  apt:
+    sources:
+      - sourceline: 'ppa:ubuntugis/ppa'
+    packages:
+      - binutils
+      - libproj-dev
+      - libgeos-dev
+      - libgdal-dev
+
 install:
   - pip install tox
-  - sudo apt install -y binutils libproj-dev libgdal-dev
   - pip install gdal==$(gdal-config --version) --global-option=build_ext --global-option="-I/usr/include/gdal"
 
 script: tox
