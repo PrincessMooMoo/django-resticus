@@ -1,6 +1,7 @@
 # Adapted from
 # https://www.mysociety.org/2015/06/01/django-streaminghttpresponse-json-html/
 
+
 class iterdict(dict):
     """This is a fake dict that sticks an iterable on items/iteritems. Why on
     earth would you want to do such a thing, I hear you cry? Well, if you want

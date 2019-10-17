@@ -120,7 +120,8 @@ class GenericEndpoint(Endpoint):
 
     def serialize(self, source, fields=None, include=None, exclude=None, fixup=None):
         serializer = self.get_serializer_class()
-        return serializer(source,
+        return serializer(
+            source,
             fields=fields or self.fields,
             include=include,
             exclude=exclude,
